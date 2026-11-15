@@ -1,0 +1,49 @@
+### ===================================================================
+### TASKFLOW REST API TEST REQUESTS
+### Jalankan dengan REST Client extension (VS Code) atau curl
+### ===================================================================
+
+@baseUrl = http://localhost:3000/api
+
+### 1. Ambil Seluruh Daftar Tugas (READ ALL)
+GET {{baseUrl}}/tasks
+Accept: application/json
+
+### 2. Tambah Tugas Baru - Berhasil (CREATE)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "judul": "Mengerjakan Modul 3 & 4 SKPL",
+  "deskripsi": "Membuat antarmuka responsif dan menghubungkan API",
+  "deadline": "2026-11-20",
+  "status": "Pending"
+}
+
+### 3. Tambah Tugas - Validasi Negatif TC-02 (Form Judul Kosong)
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "judul": "   ",
+  "deskripsi": "Harus ditolak oleh sistem"
+}
+
+### 4. Toggle Status Tugas - TC-01 (Ubah Pending -> Completed)
+PATCH {{baseUrl}}/tasks/1/toggle
+Accept: application/json
+
+### 5. Update Rincian Tugas (UPDATE)
+PUT {{baseUrl}}/tasks/2
+Content-Type: application/json
+
+{
+  "judul": "Implementasi Antarmuka Tailwind CSS (Revisi)",
+  "deskripsi": "Memperbarui styling dan integrasi script modular",
+  "deadline": "2026-11-18",
+  "status": "Pending"
+}
+
+### 6. Hapus Tugas (DELETE)
+DELETE {{baseUrl}}/tasks/3
+Accept: application/json

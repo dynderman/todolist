@@ -1,0 +1,28 @@
+{
+  "name": "taskflow-todolist",
+  "version": "1.0.0",
+  "description": "Aplikasi To-Do List modern berbasis web sesuai spesifikasi SKPL dengan arsitektur modular, validasi TC-01/TC-02, proteksi Anti-XSS (SEC-01), dan integrasi Supabase PostgreSQL.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node tests/test_validation.js"
+  },
+  "keywords": [
+    "todo-list",
+    "skpl",
+    "supabase",
+    "postgresql",
+    "tailwind",
+    "clean-code",
+    "anti-xss"
+  ],
+  "author": "Antigravity Developer",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {}
+}
